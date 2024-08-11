@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h2>Bem-vindo, {{ username }}</h2>
+    <form method="POST">
+        <label for="search_user">Buscar Usuário:</label>
+        <input type="text" id="search_user" name="search_user" required>
+        <button type="submit">Procurar</button>
+    </form>
+    <br>
+    <a href="/delete_user">Excluir Usuário</a>
+    <br>
+    <a href="/logout">Logout</a>
+</body>
+</html>

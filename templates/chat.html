@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+</head>
+<body>
+    <h2>Conversando com {{ chat_with }}</h2>
+    <div>
+        {% for message in chat_history %}
+            <p>{{ message.sender }}: {{ message.message }}
+            {% if message.sender != username %}
+                {% if message.seen %}
+                    (Visto)
+                {% else %}
+                    (Enviado)
+                {% endif %}
+            {% endif %}
+            </p>
+        {% endfor %}
+    </div>
+    <form method="POST">
+        <label for="message">Mensagem:</label>
+        <input type="text" id="message" name="message" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <br>
+    <a href="/leave_chat">Sair da Conversa</a>
+</body>
+</html>
